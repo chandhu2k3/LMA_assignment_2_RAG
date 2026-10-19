@@ -1,0 +1,12 @@
+# Colab-friendly. Pin major versions loosely so the notebook stays reproducible.
+sentence-transformers>=2.2,<6
+torch --index-url https://download.pytorch.org/whl/cpu
+# NOTE: on Google Colab torch is preinstalled; the line above is only needed
+# for local CPU-only installs. In the notebook we install without the index-url.
+pypdf>=4
+transformers>=4.40  # local keyless LLM (Qwen 1.5B) for the final answer chain
+accelerate>=0.30  # device_map for the local model
+# LLM via stdlib urllib REST -- no LLM API package needed.
+# (google-genai / google-generativeai intentionally NOT used: SDK client-state bugs.)
+numpy
+scikit-learn
